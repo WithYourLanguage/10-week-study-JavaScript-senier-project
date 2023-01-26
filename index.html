@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="materialize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="aFont.css" />
+    <title>Time</title>
+  </head>
+  <h2
+    class="hidden"
+    id="Login-Text"
+    style="color: White"
+    topmargin="0"
+    bottommargin="0"
+    leftmargin="0"
+    rightmargin="0"
+  >
+    Hello, what's your name?
+  </h2>
+  <form class="hidden" id="login-form">
+    <input
+      required
+      maxlength="15"
+      type="text"
+      style="color: rgb(255, 255, 255)"
+      placeholder="WHat is your name?"
+    />
+  </form>
+  <div id="weather" style="color: White">
+    <span>날씨를 이용하시려면 위치 권한을 허용해주세요</span>
+    <span></span>
+  </div>
+  <h2
+    id="clock"
+    class="hidden"
+    style="color: White"
+    topmargin="0"
+    leftmargin="0"
+    marginwidth="0"
+    marginheight="0"
+  >
+    00:00
+  </h2>
+
+  <body id="body" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+    <h1 id="greeting" style="color: White"></h1>
+
+    <form id="todo-form" class="hidden">
+      <input
+        type="text"
+        style="color: rgb(255, 255, 255)"
+        placeholder="Write a To Do and Press Enter"
+        required
+      />
+    </form>
+    <ul id="todo-list" style="color: White" class="hidden"></ul>
+
+    <div id="quote" style="color: White" class="hidden">
+      <span></span>
+      <span></span>
+    </div>
+
+    <!--배경 컬렉션 선택 html-->
+    <div class="collection_selection">
+      <div class="Green-Forest_background">
+        <div class="collection_selection__img">
+          <img src="img/Green Forest/21.jpg" />
+        </div>
+        <div class="collection_selection__span">
+          <span>Green forest</span>
+        </div>
+        <div class="collection_selection__Described">
+          <span class="collection_selection__Described-title"
+            >컬렉션을 선택하시면<br />
+            배경이 컬렉션에 있는 이미지중 랜덤으로 출력됩니다.</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="materialize.js"></script>
+    <script src="greetings.js"></script>
+    <script src="clock.js"></script>
+    <script src="quotes.js"></script>
+    <script src="background.js"></script>
+    <script src="todo.js"></script>
+    <script src="weather.js"></script>
+  </body>
+</html>
