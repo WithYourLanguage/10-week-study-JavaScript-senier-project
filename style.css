@@ -5,8 +5,11 @@
 .body {
   margin: 0;
   padding: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
-
 .bgImage {
   position: absolute;
   top: 0;
@@ -74,16 +77,18 @@
   line-height: 0px; /*위에서부터 150px 띄워라*/
 }
 
-.collection_selection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .Green-Forest_background {
   width: 300px;
   height: 400px;
   background-color: white;
   border-radius: 25px;
+  display: block;
+  margin-top: 2px;
+}
+.collection_selection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .collection_selection__img {
   display: flex;

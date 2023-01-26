@@ -17,10 +17,13 @@ const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
 //localStorage.setItem("collection", "null");
-const GreenForestBackground = document.querySelector(
-  ".Green-Forest_background"
-);
-
+const GreenForestBackground = document.querySelector("#Green-Forest");
+const collectionSelection = document.querySelector("#Green-Forest");
+const OceanBackground = document.querySelector("#Ocean__background");
+const mountainBackground = document.querySelector("#mountain__background");
+GreenForestBackground.style.display = "none";
+OceanBackground.style.display = "none";
+mountainBackground.style.display = "none";
 function getClock() {
   // paintGreetings 펑션에서 Good morning, {사용자이름}
   const date = new Date();
@@ -46,8 +49,15 @@ function onLoginSubmit(event) {
 
 function paintGreetings(username) {
   if (localStorage.getItem("collection") === null) {
-    GreenForestBackground.classList.remove(HIDDEN_CLASSNAME, username); // 시계
+    GreenForestBackground.style.display = "block";
+    OceanBackground.style.display = "block";
+    mountainBackground.style.display = "block";
+    GreenForestBackground.classList.remove(HIDDEN_CLASSNAME, username);
   } else {
+    GreenForestBackground.style.display = "none";
+    OceanBackground.style.display = "none";
+    mountainBackground.style.display = "none";
+
     quote.classList.remove(HIDDEN_CLASSNAME, username); // 명언
     greeting.classList.remove(HIDDEN_CLASSNAME);
     clock.classList.remove(HIDDEN_CLASSNAME, username); // 시계
@@ -93,3 +103,5 @@ function paintGreetingsAddUsername() {
   }
 }
 collectionSelection.addEventListener("click", paintGreetingsAddUsername);
+OceanBackground.addEventListener("click", paintGreetingsAddUsername);
+mountainBackground.addEventListener("click", paintGreetingsAddUsername);
