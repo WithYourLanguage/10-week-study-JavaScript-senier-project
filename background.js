@@ -1,7 +1,7 @@
 const images = [
   "img/Green Forest/0.jpg",
   "img/Green Forest/1.jpg",
-  "img/Green Forest/2.jpg",
+  "img/Green Forest/3.jpg",
   "img/Green Forest/4.jpg",
   "img/Green Forest/5.jpg",
   "img/Green Forest/6.jpg",
@@ -23,7 +23,7 @@ const images = [
 ];
 const backGround = document.querySelector("#backGround");
 //const collectionSelection = document.querySelector(".collection_selection");
-
+const collectionSelection = document.querySelector(".collection_selection");
 // const body = document.querySelector("body");
 
 const chosenImage = images[Math.floor(Math.random() * images.length)];
@@ -54,10 +54,10 @@ if (chosenImage === "0.jpg") {
 }
 
 document.body.appendChild(bgImage);
-image.classList.add("bgImage");
+//image.classList.add("bgImage");
 body.prepend((bgImage.id = "img"));
 
-image.classList.add("bgImage");
+//image.classList.add("bgImage");
 
 //document.body.appendChild(bgImage)
 
@@ -71,3 +71,10 @@ image.classList.add("bgImage");
 }
 
 collectionSelection.addEventListener("click", collectionSelectionClick);*/
+function GreenForestClick() {
+  GreenForestBackground.classList.add("hidden");
+  console.log("GreenForestClick");
+  localStorage.setItem("collection", "GreenForest");
+  console.log(localStorage.getItem("collection"));
+}
+collectionSelection.addEventListener("click", GreenForestClick);

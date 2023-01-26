@@ -3,8 +3,6 @@ const loginInput = document.querySelector("#login-form input");
 const loginText = document.querySelector("#Login-Text");
 const greeting = document.querySelector("#greeting");
 
-const collectionSelection = document.querySelector(".collection_selection");
-
 const quote = document.querySelector("#quote");
 
 //const clock = document.querySelector("#clock")
@@ -17,7 +15,11 @@ const todoList = document.querySelector("#todo-list");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
-localStorage.setItem("collection", "null");
+
+//localStorage.setItem("collection", "null");
+const GreenForestBackground = document.querySelector(
+  ".Green-Forest_background"
+);
 
 function getClock() {
   // paintGreetings 펑션에서 Good morning, {사용자이름}
@@ -43,13 +45,14 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings(username) {
-  if (localStorage.getItem("collection") === "null") {
+  if (localStorage.getItem("collection") === null) {
+    GreenForestBackground.classList.remove(HIDDEN_CLASSNAME, username); // 시계
   } else {
+    quote.classList.remove(HIDDEN_CLASSNAME, username); // 명언
     greeting.classList.remove(HIDDEN_CLASSNAME);
     clock.classList.remove(HIDDEN_CLASSNAME, username); // 시계
     todoList.classList.remove(HIDDEN_CLASSNAME, username); // todo 텍스트
     todoForm.classList.remove(HIDDEN_CLASSNAME, username); // todo input box
-    quote.classList.remove(HIDDEN_CLASSNAME, username); // 명언
 
     weather.classList.remove(HIDDEN_CLASSNAME, username); // 날씨
     // 여기야 여기라구************************************************
@@ -72,7 +75,7 @@ function paintGreetings(username) {
   }
 }
 
-const savedUsername = localStorage.getItem(USERNAME_KEY);
+let savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
@@ -81,8 +84,12 @@ if (savedUsername === null) {
 } else {
   paintGreetings(savedUsername);
 }
-
-function collectionSelectionClick() {
-  console.log("드디어 성공했나..!");
+function paintGreetingsAddUsername() {
+  if (savedUsername === null) {
+    savedUsername = localStorage.getItem(USERNAME_KEY);
+    paintGreetings(savedUsername);
+  } else {
+    paintGreetings(savedUsername);
+  }
 }
-collectionSelection.addEventListener("click", collectionSelectionClick);
+collectionSelection.addEventListener("click", paintGreetingsAddUsername);
