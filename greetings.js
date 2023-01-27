@@ -7,7 +7,7 @@ const quote = document.querySelector("#quote");
 
 //const clock = document.querySelector("#clock")
 
-const weather = document.querySelector("#weather");
+const weather_1 = document.querySelector("#weather");
 
 const todoForm = document.querySelector("#todo-form");
 
@@ -64,7 +64,7 @@ function paintGreetings(username) {
     todoList.classList.remove(HIDDEN_CLASSNAME, username); // todo 텍스트
     todoForm.classList.remove(HIDDEN_CLASSNAME, username); // todo input box
 
-    weather.classList.remove(HIDDEN_CLASSNAME, username); // 날씨
+    weather_1.classList.remove(HIDDEN_CLASSNAME, username); // 날씨
     // 여기야 여기라구************************************************
     const date = new Date();
     const hours = String(date.getHours()).padStart(2, "0");
